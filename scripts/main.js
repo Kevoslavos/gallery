@@ -1,21 +1,16 @@
-const image1 = "https://picsum.photos/id/123/300/150";
-const image2 = "https://picsum.photos/id/234/300/150";
-const image3 = "https://picsum.photos/id/345/300/150";
 
-const photos = [image1, image2, image3];
 
-//images.push(image1, image2, image3);
 
-for (const image of photos) {
-    // console.log("to jest obrazek" + image);
-    // console.log("kc");
-}
 
-for (let i = 0; i < photos.length; i++) {
-    const image = photos[i];
-    // console.log("to jest obrazek" + image);
-    // console.log("kc");
-}
+// for (const image of photos) {
+//     // console.log("to jest obrazek" + image);
+//     // console.log("kc");
+// }
+// for (let i = 0; i < photos.length; i++) {
+//     const image = photos[i];
+//     // console.log("to jest obrazek" + image);
+//     // console.log("kc");
+// }
 
 const isEmpty = (photos.length === 0);
 const isEmpty2 = (photos.length == 0);
@@ -64,4 +59,33 @@ function renderPhoto(url) {
 // renderImage('https://picsum.photos/id/10/300/150');
 // renderImage('https://picsum.photos/id/20/300/150');
 // renderImage('https://picsum.photos/id/30/300/150');
-displayPhotos(photos);
+// displayPhotos(photos);
+
+function displayMessage(message){
+    const main=document.querySelector('main');
+    // main.textContent = message;
+    main.innerHTML = `
+    <p class="alert alert-info text-center">
+     ${message} 
+     </p>
+     `;
+}
+
+const canDisplayPhotos= prompt('czy chcesz wyswietlic zdjecia?');
+    if ( canDisplayPhotos.toLowerCase() === 'tak' ){
+        console.log ('zdjecia istnieja');
+        displayPhotos(photos);
+    }else{
+        console.log ('zdjecia nie istnieja');
+        displayMessage('nie ma zdjec');
+    }
+
+
+// if (photos.length === 0){
+//     console.log('zdjecia nie instnieja');
+//     displayMessage('nie ma zdjec');
+// } else{
+//     console.log('zdjecia istnieja');
+//     displayPhotos (photos);
+// }
+// displayMessage('ciasteczko');
