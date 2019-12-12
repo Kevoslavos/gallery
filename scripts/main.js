@@ -8,8 +8,7 @@
 //     // console.log("kc");
 // }
 
-const isEmpty = (photos.length === 0);
-const isEmpty2 = (photos.length == 0);
+
 
 function displayImages() {
     console.log('liczba obrazkow ' + photos.length);
@@ -26,6 +25,7 @@ function displayLastElement() {
     console.log(345345 ** 2342);
 }
 
+
 function displayPhotos(photos) {
     console.log(photos);
     for (const photo of photos) {
@@ -34,6 +34,8 @@ function displayPhotos(photos) {
 
 
 }
+
+
 
 function renderPhoto(url) {
 
@@ -47,21 +49,15 @@ function renderPhoto(url) {
     // console.log(img);
 }
 
-function displayThis(){
-    const answer= prompt('czy chcesz wyswietlic zdjecia?');
-     return(answer.toLowerCase() === 'tak' )
+function displayThis() {
+    const answer = prompt('czy chcesz wyswietlic zdjecia?');
+    return (answer.toLowerCase() === 'tak')
 
 }
-function isEmpty (){
-    return photos.length() === 0 ;
+function isEmpty() {
+    return photos.length === 0;
 }
-if (isEmpty()){
-    console.log('zdjecia istnieja');
-    displayPhotos (photos);
-}else{
-    console.log('zdjecia nie istnieja');
-    displayMessage('nie ma zdjec');
-}
+
 // displayImages();
 
 // displayLastElement ();
@@ -71,8 +67,8 @@ if (isEmpty()){
 // renderImage('https://picsum.photos/id/30/300/150');
 // displayPhotos(photos);
 
-function displayMessage(message){
-    const main=document.querySelector('main');
+function displayMessage(message) {
+    const main = document.querySelector('main');
     // main.textContent = message;
     main.innerHTML = `
     <p class="alert alert-info text-center">
@@ -80,14 +76,31 @@ function displayMessage(message){
      </p>
      `;
 }
-const canDisplayPhotos= prompt('czy chcesz wyswietlic zdjecia?');
-    if ( canDisplayPhotos.toLowerCase() === 'tak' ){
-        console.log ('zdjecia istnieja');
-        displayPhotos(photos);
-    }else{
-        console.log ('zdjecia nie istnieja');
-        displayMessage('nie ma zdjec');
-    }
+loader.show();
+console.log('pokazujemy loader');
+
+if (!isEmpty()) {
+    console.log('zdjecia istnieja');
+    displayPhotos(photos);
+} else {
+    console.log('zdjecia nie istnieja');
+    displayMessage('nie ma zdjec');
+}
+
+setTimeout(function (){
+    loader.hide();
+    console.log('chowamy loader');
+}, 1500); //1,5s
+
+
+// const canDisplayPhotos = prompt('czy chcesz wyswietlic zdjecia?');
+// if (canDisplayPhotos.toLowerCase() === 'tak') {
+//     console.log('zdjecia istnieja');
+//     displayPhotos(photos);
+// } else {
+//     console.log('zdjecia nie istnieja');
+//     displayMessage('nie ma zdjec');
+// }
 // if (photos.length === 0){
 //     console.log('zdjecia nie instnieja');
 //     displayMessage('nie ma zdjec');
