@@ -28,9 +28,17 @@ function displayLastElement() {
 
 function displayPhotos(photos) {
     console.log(photos);
-    for (const photo of photos) {
+    // for (const photo of photos) {
+    //     renderPhoto(photo);
+    //}
+
+    photos.forEach(function (photo) {
+        console.group(photo.author);
+        console.info(photo.title);
+        console.timeEnd();
         renderPhoto(photo);
     }
+    );
 
 
 }
@@ -96,6 +104,12 @@ setTimeout(function () {
     loader.hide();
     console.log('chowamy loader');
 }, 1500); //1,5s
+
+const authors = photos.map (function(photos) {
+    return photos.author});
+console.log(authors);
+
+
 
 
 // const canDisplayPhotos = prompt('czy chcesz wyswietlic zdjecia?');
