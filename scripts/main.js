@@ -80,15 +80,7 @@ function isEmpty() {
 // renderImage('https://picsum.photos/id/30/300/150');
 // displayPhotos(photos);
 
-function displayMessage(message) {
-    const main = document.querySelector('main');
-    // main.textContent = message;
-    main.innerHTML = `
-    <p class="alert alert-info text-center">
-     ${message} 
-     </p>
-     `;
-}
+
 loader.show();
 console.log('pokazujemy loader');
 
