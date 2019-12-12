@@ -1,7 +1,3 @@
-
-
-
-
 // for (const image of photos) {
 //     // console.log("to jest obrazek" + image);
 //     // console.log("kc");
@@ -49,9 +45,23 @@ function renderPhoto(url) {
     // console.log(main);
     // console.log(url);
     // console.log(img);
-
 }
 
+function displayThis(){
+    const answer= prompt('czy chcesz wyswietlic zdjecia?');
+     return(answer.toLowerCase() === 'tak' )
+
+}
+function isEmpty (){
+    return photos.length() === 0 ;
+}
+if (isEmpty()){
+    console.log('zdjecia istnieja');
+    displayPhotos (photos);
+}else{
+    console.log('zdjecia nie istnieja');
+    displayMessage('nie ma zdjec');
+}
 // displayImages();
 
 // displayLastElement ();
@@ -70,7 +80,6 @@ function displayMessage(message){
      </p>
      `;
 }
-
 const canDisplayPhotos= prompt('czy chcesz wyswietlic zdjecia?');
     if ( canDisplayPhotos.toLowerCase() === 'tak' ){
         console.log ('zdjecia istnieja');
@@ -79,8 +88,6 @@ const canDisplayPhotos= prompt('czy chcesz wyswietlic zdjecia?');
         console.log ('zdjecia nie istnieja');
         displayMessage('nie ma zdjec');
     }
-
-
 // if (photos.length === 0){
 //     console.log('zdjecia nie instnieja');
 //     displayMessage('nie ma zdjec');
