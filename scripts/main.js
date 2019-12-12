@@ -37,13 +37,26 @@ function displayPhotos(photos) {
 
 
 
-function renderPhoto(url) {
+function renderPhoto(photo) {
 
-    const img = document.createElement('img');
-    img.src = url;
+    const $card = document.createElement('div');
+    $card.classList.add('card', 'col-3', 'mx-4');
 
-    const main = document.querySelector('main');
-    main.append(img);
+    const $img = document.createElement('img');
+    $img.src = photo.url;
+    const $body = document.createElement('div');
+    $body.classList.add('card-body');
+
+    const $title = document.createElement('h5');
+    $title.classList.add('card-title');
+    $title.textContent = photo.title;
+
+    $card.append($img);
+    $card.append($body);
+    $body.append($title);
+
+    const $main = document.querySelector('main');
+    $main.append($card);
     // console.log(main);
     // console.log(url);
     // console.log(img);
@@ -87,7 +100,7 @@ if (!isEmpty()) {
     displayMessage('nie ma zdjec');
 }
 
-setTimeout(function (){
+setTimeout(function () {
     loader.hide();
     console.log('chowamy loader');
 }, 1500); //1,5s
