@@ -8,7 +8,7 @@ loader.show = function(){
     img.classList.add('loader');
     //ustawienie atrybuty src
     img.src= 'images/831.svg';
-    //pobranie referancji do kontenera, w ktorym loader sie wyswietli
+    //pobranie referencji do kontenera, w ktorym loader sie wyswietli
     const $main = document.querySelector('main');
     //dodanie loadera do powyzszego kontenera
     $main.append(img);
