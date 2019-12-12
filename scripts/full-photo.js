@@ -31,4 +31,4 @@ const big2 = new fullPhoto(
     'https://picsum.photos/1280/720', 1280, 720
 );
 
-debugger;
+//debugger;

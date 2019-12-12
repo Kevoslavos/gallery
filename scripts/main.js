@@ -33,8 +33,8 @@ function displayPhotos(photos) {
     //}
 
     photos.forEach(function (photo) {
-        console.group(photo.author);
-        console.info(photo.title);
+        console.group(photo.id);
+        console.info(photo.author.name);
         console.timeEnd();
         renderPhoto(photo);
     }
@@ -51,13 +51,13 @@ function renderPhoto(photo) {
     $card.classList.add('card', 'col-3', 'mx-4');
 
     const $img = document.createElement('img');
-    $img.src = photo.url;
+    $img.src = photo.imageUrl;
     const $body = document.createElement('div');
     $body.classList.add('card-body');
 
     const $title = document.createElement('h5');
     $title.classList.add('card-title');
-    $title.textContent = photo.title;
+    $title.textContent = photo.description;
 
     $card.append($img);
     $card.append($body);
@@ -88,26 +88,41 @@ function isEmpty() {
 // renderImage('https://picsum.photos/id/30/300/150');
 // displayPhotos(photos);
 
+function main() {
 
-loader.show();
-console.log('pokazujemy loader');
 
-if (!isEmpty()) {
-    console.log('zdjecia istnieja');
-    displayPhotos(photos);
-} else {
-    console.log('zdjecia nie istnieja');
-    displayMessage('nie ma zdjec');
+    loader.show();
+    // console.log('pokazujemy loader');
+    fetchPhotosFromRemote()
+        .then(function (photos) {
+
+
+            if (!isEmpty(photos)) {
+                //  console.log('zdjecia istnieja');
+                displayPhotos(photos);
+            } else {
+               // console.log('zdjecia nie istnieja');
+                displayMessage('nie ma zdjec');
+            }
+        })
+        .catch(function () {
+            displayErrorMessage('problem z pobraniem zdjec');
+        })
+        .finally(function () {
+            loader.hide();
+        });
+
 }
+main();
 
-setTimeout(function () {
-    loader.hide();
-    console.log('chowamy loader');
-}, 1500); //1,5s
+// setTimeout(function () {
+//     loader.hide();
+//     console.log('chowamy loader');
+// }, 1500); //1,5s
 
-const authors = photos.map (function(photos) {
-    return photos.author});
-console.log(authors);
+// const authors = photos.map (function(photos) {
+//     return photos.author});
+// console.log(authors);
 
 
 
