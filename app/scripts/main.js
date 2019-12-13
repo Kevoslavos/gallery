@@ -35,7 +35,7 @@ function displayPhotos(photos) {
     photos.forEach(function (photo) {
         console.group(photo.id);
         console.info(photo.author.name);
-        console.timeEnd();
+        console.groupEnd();
         renderPhoto(photo);
     }
     );
@@ -94,11 +94,11 @@ function main() {
     loader.show();
     // console.log('pokazujemy loader');
     fetchPhotosFromLocal()
-        .then(function (images) {
-            return images.map(function (images) {
-                images.imageURL = images.url;
-                images.description = images.title;
-                return images;
+        .then(function (photos) {
+            return photos.map(function (photos) {
+                photos.imageURL = photos.url;
+                photos.description = photos.title;
+                return photos;
 
             });
         })
