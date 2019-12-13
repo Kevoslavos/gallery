@@ -75,7 +75,7 @@ function displayThis() {
     return (answer.toLowerCase() === 'tak')
 
 }
-function isEmpty() {
+function isEmpty(photos) {
     return photos.length === 0;
 }
 
@@ -101,7 +101,7 @@ function main() {
                 //  console.log('zdjecia istnieja');
                 displayPhotos(photos);
             } else {
-               // console.log('zdjecia nie istnieja');
+                // console.log('zdjecia nie istnieja');
                 displayMessage('nie ma zdjec');
             }
         })

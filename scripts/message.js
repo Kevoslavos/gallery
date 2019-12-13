@@ -1,7 +1,7 @@
 function displayMessage(message, label = 'alert-info') {
-    const main = document.querySelector('main');
+    const $main = document.querySelector('main');
     // main.textContent = message;
-    main.innerHTML = `
+    $main.innerHTML = `
     <p class="alert ${label} text-center">
      ${message} 
      </p>
