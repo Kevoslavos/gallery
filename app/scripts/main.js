@@ -95,10 +95,10 @@ function main() {
     // console.log('pokazujemy loader');
     fetchPhotosFromLocal()
         .then(function (images) {
-            return displayImages.map(function (image) {
+            return images.map(function (images) {
                 images.imageURL = images.url;
                 images.description = images.title;
-                return image;
+                return images;
 
             });
         })
