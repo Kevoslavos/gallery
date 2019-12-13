@@ -14,4 +14,9 @@ function fetchPhotosFromRemote() {
 function fetchPhotosFromLocal() {
     return fetchPhotos('data/images.json')
 
+
 }
+module.exports= {
+    fetchPhotosFromRemote,
+    fetchPhotosFromLocal
+};

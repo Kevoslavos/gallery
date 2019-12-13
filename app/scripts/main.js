@@ -7,8 +7,8 @@
 //     // console.log("to jest obrazek" + image);
 //     // console.log("kc");
 // }
-
-
+const loader = require ('./loader');
+const { fetchPhotosFromLocal } = require('./service');
 
 function displayImages() {
     console.log('liczba obrazkow ' + photos.length);
@@ -95,10 +95,10 @@ function main() {
     // console.log('pokazujemy loader');
     fetchPhotosFromLocal()
         .then(function (photos) {
-            return photos.map(function (photos) {
-                photos.imageURL = photos.url;
-                photos.description = photos.title;
-                return photos;
+            return photos.map(function (photo) {
+                photo.imageUrl = photo.url;
+                photo.description = photo.title;
+                return photo;
 
             });
         })
