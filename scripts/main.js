@@ -93,7 +93,15 @@ function main() {
 
     loader.show();
     // console.log('pokazujemy loader');
-    fetchPhotosFromRemote()
+    fetchPhotosFromLocal()
+    .then(function(images){
+        return displayImages.map(function(image){
+            images.imageURL = images.url;
+            images.description = images.title;
+            return image;
+
+        });
+    })
         .then(function (photos) {
 
 
